@@ -6,6 +6,10 @@ type EmployeeInteractor struct {
 	EmployeeRepository domain.EmployeeRepository
 }
 
-func (ei EmployeeInteractor) GetEmployee(id int) (domain.Employee, error) {
+func NewEmployeeInteractor() *EmployeeInteractor {
+	return &EmployeeInteractor{}
+}
+
+func (ei *EmployeeInteractor) GetEmployee(id int) (domain.Employee, error) {
 	return ei.EmployeeRepository.GetEmployee(id)
 }

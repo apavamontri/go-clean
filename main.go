@@ -5,10 +5,10 @@ import "github.com/apavamontri/go-clean/interfaces"
 import "net/http"
 
 func main() {
-	employeeInteractor := usecases.EmployeeInteractor{}
-	employeeInteractor.EmployeeRepository = interfaces.MemoryRepository{}
+	employeeInteractor := usecases.NewEmployeeInteractor()
+	employeeInteractor.EmployeeRepository = interfaces.NewMemoryRepository()
 
-	webHandler := interfaces.WebHandler{}
+	webHandler := interfaces.NewWebHandler()
 	webHandler.EmployeeInteractor = employeeInteractor
 
 	http.HandleFunc("/", webHandler.GetEmployee)
