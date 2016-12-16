@@ -45,11 +45,13 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+debug
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
