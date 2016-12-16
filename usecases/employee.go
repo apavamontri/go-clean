@@ -2,14 +2,14 @@ package usecases
 
 import "github.com/apavamontri/go-clean/domain"
 
+type EmployeeRepository interface {
+	GetEmployee(id int) (domain.Employee, error)
+}
+
 type EmployeeInteractor struct {
-	EmployeeRepository domain.EmployeeRepository
+	EmployeeRepository
 }
 
 func NewEmployeeInteractor() *EmployeeInteractor {
 	return &EmployeeInteractor{}
-}
-
-func (ei *EmployeeInteractor) GetEmployee(id int) (domain.Employee, error) {
-	return ei.EmployeeRepository.GetEmployee(id)
 }
